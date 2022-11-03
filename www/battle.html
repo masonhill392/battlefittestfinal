@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+  <meta http-equiv="Content-Secrity-Policy"
+    content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/framework7-bundle.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/framework7-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/index.css"> -->
+  <title>podcasts</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- panel components go here -->
+    <!-- Right panel, with cover effect -->
+    <div class="panel panel-right panel-cover  bg-color-white">
+      <div class="header">
+        <h1 class="text-color-white">See these this season!</h1>
+
+        <hr>
+
+      </div>
+    </div>
+
+    <div class="view view-main">
+      <!-- component will apply to all pages in view -->
+      <!-- Bottom Toolbar -->
+
+
+      <div class="page bg-color-grey" data-name="battle">
+        <!-- component is fixed to the page -->
+        <div class="navbar bg-color-brown">
+          <div class="navbar-bg  bg-color-black"></div>
+          <div class="navbar-inner">
+            <div class="title text-color-white fredoka titletext">Battle of the Fittest</div>
+            <!-- <a href="#" class="panel-open" data-panel="right"><i
+              class="icon f7-icons">layers_alt</i></a> -->
+          </div>
+        </div>
+
+
+        <div class="page-content bg-color-black" id="battlescreen">
+          <div id="battledisplay">
+            <!--for some reason this div needs to be-->
+              <div class="card-header screen-border"></div>
+              <div class="card-content">
+                <!-- Card content -->
+                <div class="screen">
+
+
+                  <div id="prompts">
+
+
+                    <div id="userdeadprompt"><h1>YOU DIED...</h1></div>
+                    <div id="enemydeadprompt"><h1>YOU WON!</h1></div>
+                    <div id="pickmoveprompt"><h1 class="padding">Pick an attack..</h1><p class="padding"></p></div>
+                    <div id="repprompt"><h1 class="padding">Do your reps!</h1></div>
+                    
+                    
+                    <div class="list margin-horizontal" id="repinputsec">
+                      <ul>
+                        ...
+                        <li class="item-content item-input">
+                          <div class="item-media">Fuck</div>
+                          <div class="item-inner">
+                            <div class="item-input-wrap">
+                              <input type="text" name="name" id="repinput" />
+                              <span class="input-clear-button" id="repinputbutton">Enter</span>
+                            </div>
+                          </div>
+                        </li>
+                        ...
+                      </ul>
+                    </div>
+
+                    <div id="ynbuttons"><button class="padding bg-color-green" id="buttonyes">Yes</button><button class="padding bg-color-red" id="buttonno">No</button></div>
+                  
+                  
+                  
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="card-footer  screen-border"></div>
+
+          </div>
+
+          <!-- button grid -->
+
+          <div>
+            <!--battleui-->
+            <div class="container" id="battleui" style="height: 100vmin;">
+              <div class="textboxt item itemtext itemheader"><h1 id="update">Battle Update History</h1></div>
+              <div class="username item">YOU</div>
+              <div class="userhealth  item" id="userhealthdisplay">USER HEALTH /100</div>
+              <div class="enemy item">ALPHA</div>
+              <div class="enemyhealth item" id="enemyhealthdisplay">ENEMY HEALTH /100</div>
+              <div class="enemyhealthbar item"></div>
+              <div class="userhealthbar item"></div>
+              <button class="upperbutton item itemtext" id="upperbutton">PUSHUPS</button>
+              <button class="corebutton item itemtext" id="corebutton">SITUPS</button>
+              <button class="lowerbutton item itemtext" id="lowerbutton">SQUATS</button>
+            </div>
+            <!--character stat input-->
+
+            <div class="list" id="statinput">
+              <h1 class="text-color-white" style="margin-top: 10px;"> Enter your fitness max's for each exercise below.
+              </h1>
+              <p class="text-color-white" style="text-align: center;">Include the number, no units</p>
+              <ul>
+                <!-- additional "item-input-outline" class -->
+                <li class="item-content item-input item-input-outline
+                  bg-color-black">
+                  <div class="item-inner">
+                    <div class="item-title item-label text-color-white" id="corequestion">What is your weight in pounds?
+                    </div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" class="text-color-white" id="weightinput" />
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item-content item-input item-input-outline
+                  bg-color-black">
+                  <div class="item-inner">
+                    <div class="item-title item-label text-color-white" id="corequestion">Situps in a minute?</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" class="text-color-white" id="coreinput" />
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input item-input-outline
+                  bg-color-black">
+                  <div class="item-inner">
+                    <div class="item-title item-label text-color-white" id="upperquestion">Pushups in a row?</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" class="text-color-white" id="upperinput" />
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="item-content item-input item-input-outline
+                  bg-color-black">
+                  <div class="item-inner">
+                    <div class="item-title item-label text-color-white" id="lowerquestion">Static squat time?</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" class="text-color-white" id="lowerinput" />
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- //FIND A BETTER INPUT FOR THIS// -->
+                <li class="item-content item-input item-input-outline
+                  bg-color-black">
+                  <div class="item-inner">
+                    <div class="item-title item-label text-color-white" id="lowerquestion">Choose your difficulty. |
+                      1.4 easy| 1.2 normal | .8 hard |</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="name" class="text-color-white" id="difficultyinput" />
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <button class="button text-color-black button-large button-round button-raised bg-color-white"
+              id="buttonsubmit">Calculate your Stats</button>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="cordova.js"></script>
+      <script src="js/framework7-bundle.min.js"></script>
+      <script src="/www/js/battle.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+https://framework7.io/docs/cards#css-variables

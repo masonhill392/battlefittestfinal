@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+  <meta http-equiv="Content-Secrity-Policy"
+    content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/framework7-bundle.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/framework7-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/index.css"> -->
+  <title>Battle of the Fittest</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="view view-main">
+      <!-- component will apply to all pages in view -->
+      <!-- Bottom Toolbar -->
+
+
+      <div class="page bg-color-grey" data-name="index">
+        <!-- component is fixed to the page -->
+
+
+        <div class="intro display-flex flex-direction-column justify-content-center">
+          <div>
+            <h1 class=" intro-text text-align-center">
+              <div class="logotext" id="intro-title">Battle <br> of the <br> Fittest</div>
+              <div>
+                <p class="text-small margin-horizontal" id="disclaimertext">
+                  This app is still in development, and this
+                  is a demo test.
+                  All information is provided in good faith, however we make no
+                  representation or warranty of
+                  any kind, exppress or implied, regarding the accuracy, adequacy, validity, reliability, availability,
+                  or completeness of any information on our mobile application. The user accepts that we have no
+                  liability for any loss or damage incurred, and use of our mobile application is solely at your own
+                  risk.
+                </p>
+
+              </div>
+
+            </h1>
+          </div>
+          <div class="halfwidth align-self-center">
+
+
+            <button class="button text-color-white button-large button-round button-raised bg-color-black"
+              id="intro-button">Enter</button>
+            <a href="/battle/" class="link">
+
+
+              <button class="button text-color-white button-large button-round button-raised bg-color-black"
+              id="enter-app">Let's Battle!</button>
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="cordova.js"></script>
+  <script src="js/framework7-bundle.min.js"></script>
+  <script src="/www/js/index.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
